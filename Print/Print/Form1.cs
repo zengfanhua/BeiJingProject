@@ -27,7 +27,7 @@ namespace Print
         {
             System.Net.NetworkCredential credential = new System.Net.NetworkCredential("sd02", "123456");
             service = new Print.PrintService.zmmi507();
-            service.Url = "http://10.66.1.98:8000/sap/bc/srt/rfc/sap/zmmi507/500/zmmi507/bindin" +
+            service.Url = "http://114.251.177.94:8000/sap/bc/srt/rfc/sap/zmmi507/500/zmmi507/bindin" +
                 "g";
             service.Credentials = credential;
             serialPort1.Open();
