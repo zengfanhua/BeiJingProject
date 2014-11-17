@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DevInfo Action="Set" Persist="true" SeqNo="2">
+<Information>
+<OSName>WM6</OSName>
+<IVAVersion></IVAVersion>
+<UniqueID>S2C Settings</UniqueID>
+</Information>
+<DataModels>
+<!-- List of files needed by Intermec Settings to edit the backup settings.xml file -->
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\itcreaderdatamodel.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\itcreaderdatamodel_en.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\itcreaderdatamodel_en.chm"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\itcreaderdatamodel.help.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\communicationsschema.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\communicationsschema_en.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\communicationsschema_en.chm"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\communicationsschema.help.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\funksecuritydatamodel.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\funksecuritydatamodel_en.xml"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\funksecuritydatamodel_en.chm"/>
+<File Path="c:\program files (x86)\intermec\smartsystem\ss_lib\tools\intermec settings\funksecuritydatamodel.help.xml"/>
+<File Path="c:\program files (x86)\common files\\intermec\smartsystems\sspluggables\iqueue\iqueueschema.xml"/>
+<File Path="c:\program files (x86)\common files\\intermec\smartsystems\sspluggables\iqueue\iqueueschema_en.xml"/>
+<File Path="c:\program files (x86)\common files\\intermec\smartsystems\sspluggables\iqueue\iqueueschema_en.chm"/>
+<File Path="c:\program files (x86)\common files\\intermec\smartsystems\sspluggables\iqueue\iqueueschema.help.xml"/>
+<!-- List of pluggable subsystems -->
+<Pluggable Subsystem="IQueue" RegPath="SOFTWARE\Intermec\ICCU\Pluggable_Subsystems" DataModel="IQueueSchema.xml" Version="2.0"/>
+</DataModels>
+<!-- SETTINGS -->
+<Subsystem Name="Communications">
+<Group Name="802.11 Radio">
+<Field Name="Radio Enabled">1</Field>
+<Field Name="ZeroConfig">Off</Field>
+<Field Name="Radio Measurement">300</Field>
+<Field Name="Radio Bands">3</Field>
+<Field Name="ChangeSettingsAllowed">1</Field>
+<Group Name="Microsoft Security">
+<Field Name="Network name (SSID)">INTERMEC</Field>
+<Field Name="Infrastructure Mode">1</Field>
+<Field Name="Network Authentication">1</Field>
+<Field Name="Data Encryption">1</Field>
+<Field Name="802.1X Authentication">0</Field>
+<Field Name="Pre-Shared Key" Encrypt="binary.base64"></Field>
+<Field Name="Network Key Value" Encrypt="binary.base64"></Field>
+<Field Name="Network Key Index">0</Field>
+<Field Name="Radio Power Management">Disabled(CAM)</Field>
+<Field Name="RTS Threshold (octets)">2347</Field>
+<Field Name="Hidden Network">1</Field>
+</Group>
+<Field Name="RadioBandsEnabled">4</Field>
+</Group>
+<Group Name="IP Settings">
+<Field Name="DHCP" Path="\Communications\802.11 Radio\IP Settings\DHCP">0</Field>
+<Field Name="DHCP Client Identifier" Path="\Communications\802.11 Radio\IP Settings\DHCP Client Identifier"></Field>
+<Field Name="IP Address" Path="\Communications\802.11 Radio\IP Settings\IP Address" DeviceUnique="true">10.3.11.195</Field>
+<Field Name="Subnet Mask" Path="\Communications\802.11 Radio\IP Settings\Subnet Mask">255.255.255.0</Field>
+<Field Name="Default Router" Path="\Communications\802.11 Radio\IP Settings\Default Router">10.3.11.254</Field>
+</Group>
+<Group Name="Name Servers">
+<Field Name="Primary DNS" Path="\Communications\802.11 Radio\IP Settings\Primary DNS">0.0.0.0</Field>
+<Field Name="Secondary DNS" Path="\Communications\802.11 Radio\IP Settings\Secondary DNS"></Field>
+<Field Name="Primary WINS" Path="\Communications\802.11 Radio\IP Settings\Primary WINS">0.0.0.0</Field>
+<Field Name="Secondary WINS" Path="\Communications\802.11 Radio\IP Settings\Secondary WINS"></Field>
+</Group>
+<Group Name="Ethernet Adapter">
+<Group Name="IP Settings">
+<Field Name="DHCP">1</Field>
+<Field Name="DHCP Client Identifier"></Field>
+<Field Name="IP Address" DeviceUnique="true">0.0.0.0</Field>
+<Field Name="Subnet Mask">0.0.0.0</Field>
+<Field Name="Default Router">0.0.0.0</Field>
+<Field Name="Primary DNS">0.0.0.0</Field>
+<Field Name="Secondary DNS"></Field>
+<Field Name="Primary WINS">0.0.0.0</Field>
+<Field Name="Secondary WINS"></Field>
+<Field Name="Current Device IP Address">0.0.0.0</Field>
+</Group>
+</Group>
+<Field Name="AdapterType" Path="\Communications\AdapterType">2</Field>
+<Field Name="Current Device IP Address" Path="\Communications\802.11 Radio\IP Settings\Current Device IP Address">0.0.0.0</Field>
+</Subsystem>
+<Subsystem Name="Funk Security">
+<Field Name="ActiveProfile">Profile_1</Field>
+<Group Name="Profile" Instance="Profile_1">
+<Field Name="ProfileLabel">Profile_1</Field>
+<Field Name="NetworkType">Infrastructure</Field>
+<Field Name="DSChannel">3</Field>
+<Field Name="SSID">ORG-TERRY-PC_Network</Field>
+<Field Name="PSMode">Enabled(Fast PSP)</Field>
+<Field Name="8021x">None</Field>
+<Field Name="Association">RSN</Field>
+<Field Name="Encryption">AES</Field>
+<Field Name="PreSharedKey" Encrypt="binary.base64">lUpKm3Oprr4YyhKsCpntjQ==</Field>
+<Field Name="DefaultKeyID">1</Field>
+<Field Name="Key1" Encrypt="binary.base64"></Field>
+<Field Name="Key2" Encrypt="binary.base64"></Field>
+<Field Name="Key3" Encrypt="binary.base64"></Field>
+<Field Name="Key4" Encrypt="binary.base64"></Field>
+<Field Name="PasswordPrompt">Enabled</Field>
+<Field Name="UserName">anonymous</Field>
+<Field Name="UserPassword"></Field>
+<Field Name="InnerAuthenticationTTLS">MS-Chapv2</Field>
+<Field Name="TTLSOutername">anonymous</Field>
+<Field Name="InnerEAP">EAP/MD5</Field>
+<Field Name="InnerAuthenticationPEAP">EAP/MS-Chapv2</Field>
+<Field Name="InnerAuthenticationFAST">EAP/Token Card</Field>
+<Field Name="SubjectName"></Field>
+<Field Name="ValidateServerCert">No</Field>
+<Field Name="CN1"></Field>
+<Field Name="CN2"></Field>
+<Field Name="MixedCell">Off</Field>
+<Field Name="CCKM">1</Field>
+<Field Name="AutoProvision">Off</Field>
+<Field Name="NewPACPrompt">Off</Field>
+<Field Name="ReprovisionPrompt">Off</Field>
+<Field Name="PACAuthenticateProvisioning">Optional</Field>
+<Field Name="Logging">Off</Field>
+</Group>
+<Group Name="Profile" Instance="Profile_2">
+<Field Name="ProfileLabel">Profile_2</Field>
+<Field Name="NetworkType">Infrastructure</Field>
+<Field Name="DSChannel">3</Field>
+<Field Name="SSID">INTERMEC</Field>
+<Field Name="PSMode">Enabled(Fast PSP)</Field>
+<Field Name="8021x">None</Field>
+<Field Name="Association">Open</Field>
+<Field Name="Encryption">None</Field>
+<Field Name="PreSharedKey" Encrypt="binary.base64"></Field>
+<Field Name="DefaultKeyID">1</Field>
+<Field Name="Key1" Encrypt="binary.base64"></Field>
+<Field Name="Key2" Encrypt="binary.base64"></Field>
+<Field Name="Key3" Encrypt="binary.base64"></Field>
+<Field Name="Key4" Encrypt="binary.base64"></Field>
+<Field Name="PasswordPrompt">Enabled</Field>
+<Field Name="UserName">anonymous</Field>
+<Field Name="UserPassword"></Field>
+<Field Name="InnerAuthenticationTTLS">MS-Chapv2</Field>
+<Field Name="TTLSOutername">anonymous</Field>
+<Field Name="InnerEAP">EAP/MD5</Field>
+<Field Name="InnerAuthenticationPEAP">EAP/MS-Chapv2</Field>
+<Field Name="InnerAuthenticationFAST">EAP/Token Card</Field>
+<Field Name="SubjectName"></Field>
+<Field Name="ValidateServerCert">No</Field>
+<Field Name="CN1"></Field>
+<Field Name="CN2"></Field>
+<Field Name="MixedCell">Off</Field>
+<Field Name="CCKM">1</Field>
+<Field Name="AutoProvision">Off</Field>
+<Field Name="NewPACPrompt">Off</Field>
+<Field Name="ReprovisionPrompt">Off</Field>
+<Field Name="PACAuthenticateProvisioning">Optional</Field>
+<Field Name="Logging">Off</Field>
+</Group>
+<Group Name="Profile" Instance="Profile_3">
+<Field Name="ProfileLabel">Profile_3</Field>
+<Field Name="NetworkType">Infrastructure</Field>
+<Field Name="DSChannel">3</Field>
+<Field Name="SSID">INTERMEC</Field>
+<Field Name="PSMode">Enabled(Fast PSP)</Field>
+<Field Name="8021x">None</Field>
+<Field Name="Association">Open</Field>
+<Field Name="Encryption">None</Field>
+<Field Name="PreSharedKey" Encrypt="binary.base64"></Field>
+<Field Name="DefaultKeyID">1</Field>
+<Field Name="Key1" Encrypt="binary.base64"></Field>
+<Field Name="Key2" Encrypt="binary.base64"></Field>
+<Field Name="Key3" Encrypt="binary.base64"></Field>
+<Field Name="Key4" Encrypt="binary.base64"></Field>
+<Field Name="PasswordPrompt">Enabled</Field>
+<Field Name="UserName">anonymous</Field>
+<Field Name="UserPassword"></Field>
+<Field Name="InnerAuthenticationTTLS">MS-Chapv2</Field>
+<Field Name="TTLSOutername">anonymous</Field>
+<Field Name="InnerEAP">EAP/MD5</Field>
+<Field Name="InnerAuthenticationPEAP">EAP/MS-Chapv2</Field>
+<Field Name="InnerAuthenticationFAST">EAP/Token Card</Field>
+<Field Name="SubjectName"></Field>
+<Field Name="ValidateServerCert">No</Field>
+<Field Name="CN1"></Field>
+<Field Name="CN2"></Field>
+<Field Name="MixedCell">Off</Field>
+<Field Name="CCKM">1</Field>
+<Field Name="AutoProvision">Off</Field>
+<Field Name="NewPACPrompt">Off</Field>
+<Field Name="ReprovisionPrompt">Off</Field>
+<Field Name="PACAuthenticateProvisioning">Optional</Field>
+<Field Name="Logging">Off</Field>
+</Group>
+<Group Name="Profile" Instance="Profile_4">
+<Field Name="ProfileLabel">Profile_4</Field>
+<Field Name="NetworkType">Infrastructure</Field>
+<Field Name="DSChannel">3</Field>
+<Field Name="SSID">INTERMEC</Field>
+<Field Name="PSMode">Enabled(Fast PSP)</Field>
+<Field Name="8021x">None</Field>
+<Field Name="Association">Open</Field>
+<Field Name="Encryption">None</Field>
+<Field Name="PreSharedKey" Encrypt="binary.base64"></Field>
+<Field Name="DefaultKeyID">1</Field>
+<Field Name="Key1" Encrypt="binary.base64"></Field>
+<Field Name="Key2" Encrypt="binary.base64"></Field>
+<Field Name="Key3" Encrypt="binary.base64"></Field>
+<Field Name="Key4" Encrypt="binary.base64"></Field>
+<Field Name="PasswordPrompt">Enabled</Field>
+<Field Name="UserName">anonymous</Field>
+<Field Name="UserPassword"></Field>
+<Field Name="InnerAuthenticationTTLS">MS-Chapv2</Field>
+<Field Name="TTLSOutername">anonymous</Field>
+<Field Name="InnerEAP">EAP/MD5</Field>
+<Field Name="InnerAuthenticationPEAP">EAP/MS-Chapv2</Field>
+<Field Name="InnerAuthenticationFAST">EAP/Token Card</Field>
+<Field Name="SubjectName"></Field>
+<Field Name="ValidateServerCert">No</Field>
+<Field Name="CN1"></Field>
+<Field Name="CN2"></Field>
+<Field Name="MixedCell">Off</Field>
+<Field Name="CCKM">1</Field>
+<Field Name="AutoProvision">Off</Field>
+<Field Name="NewPACPrompt">Off</Field>
+<Field Name="ReprovisionPrompt">Off</Field>
+<Field Name="PACAuthenticateProvisioning">Optional</Field>
+<Field Name="Logging">Off</Field>
+</Group>
+<Field Name="ImportRoot" Path="\Communications\802.11 Radio\Certificates\Import Root Certificates">False</Field>
+<Field Name="ImportUser" Path="\Communications\802.11 Radio\Certificates\Import User Certificates">False</Field>
+<Field Name="ImportPac" Path="\Communications\802.11 Radio\Certificates\Import Pac Files">False</Field>
+<Field Name="Powered by Odyssey"></Field>
+</Subsystem>
+<Subsystem Name="IQueue">
+<Field Name="Associated Server IP"></Field>
+<Field Name="Broadcast Name">INTERMEC</Field>
+<Field Name="Keep Alive Ping Interval">30</Field>
+<Field Name="Server IP">LOCALHOST</Field>
+<Field Name="Port">62241</Field>
+</Subsystem>
+<Subsystem Name="SS_Client">
+<Field Name="SSPBInstalled" Path="\Communications\SSPB Installed">1</Field>
+</Subsystem>
+</DevInfo>

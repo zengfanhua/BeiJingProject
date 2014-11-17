@@ -1,0 +1,8 @@
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\bin\Debug\Print.exe
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\bin\Debug\Print.pdb
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.Form1.resources
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.exe
+C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.pdb

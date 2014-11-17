@@ -1,0 +1,715 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF6248EC-7AF4-4AF3-8BC2-B09D4D1B0F47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartDeviceProject1</RootNamespace>
+    <AssemblyName>SmartDeviceProject1</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.1</OSVersion>
+    <DeployDirSuffix>SmartDeviceProject1</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllocatioinSale\AllocationSaleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllocatioinSale\AllocationSaleInfo.designer.cs">
+      <DependentUpon>AllocationSaleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoGong\Cancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoGong\Cancel.designer.cs">
+      <DependentUpon>Cancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoGong\Submit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoGong\Submit.designer.cs">
+      <DependentUpon>Submit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BaseInfo.cs" />
+    <Compile Include="Common\BusinessException.cs" />
+    <Compile Include="Common\CommonAPI.cs" />
+    <Compile Include="Common\GlobalState.cs" />
+    <Compile Include="Common\MaterialInfo.cs" />
+    <Compile Include="Common\MaterialModel.cs" />
+    <Compile Include="Common\ProductInfo.cs" />
+    <Compile Include="Common\validation.cs" />
+    <Compile Include="Draw\DrawLogic.cs" />
+    <Compile Include="Draw\DrawMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Draw\DrawMaterial.designer.cs">
+      <DependentUpon>DrawMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Draw\DrawStates.cs" />
+    <Compile Include="Draw\Purview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Draw\Purview.Designer.cs">
+      <DependentUpon>Purview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Draw\Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Draw\Return.Designer.cs">
+      <DependentUpon>Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Draw\ReturnDrawMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Draw\ReturnDrawMaterial.designer.cs">
+      <DependentUpon>ReturnDrawMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\InputLogic.cs" />
+    <Compile Include="Input\InputMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\InputMaterial.designer.cs">
+      <DependentUpon>InputMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input\ProductStates.cs" />
+    <Compile Include="Input\ReturnMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Input\ReturnMaterial.designer.cs">
+      <DependentUpon>ReturnMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Move\LinetoWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Move\LinetoWH.designer.cs">
+      <DependentUpon>LinetoWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Move\WHTOLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Move\WHTOLine.designer.cs">
+      <DependentUpon>WHTOLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Move\WHTOside.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Move\WHTOside.designer.cs">
+      <DependentUpon>WHTOside.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parts\OrderOutbund\Orderoutbound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parts\OrderOutbund\Orderoutbound.designer.cs">
+      <DependentUpon>Orderoutbound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parts\PartIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parts\PartIn.designer.cs">
+      <DependentUpon>PartIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parts\Partout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parts\Partout.designer.cs">
+      <DependentUpon>Partout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductDialog.Designer.cs">
+      <DependentUpon>ProductDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllocatioinSale\AllocationSaleInfo.resx">
+      <DependentUpon>AllocationSaleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoGong\Cancel.resx">
+      <DependentUpon>Cancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoGong\Submit.resx">
+      <DependentUpon>Submit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Draw\DrawMaterial.resx">
+      <DependentUpon>DrawMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Draw\Purview.resx">
+      <DependentUpon>Purview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Draw\Return.resx">
+      <DependentUpon>Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Draw\ReturnDrawMaterial.resx">
+      <DependentUpon>ReturnDrawMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\InputMaterial.resx">
+      <DependentUpon>InputMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\ReturnMaterial.resx">
+      <DependentUpon>ReturnMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Move\LinetoWH.resx">
+      <DependentUpon>LinetoWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Move\WHTOLine.resx">
+      <DependentUpon>WHTOLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Move\WHTOside.resx">
+      <DependentUpon>WHTOside.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parts\OrderOutbund\Orderoutbound.resx">
+      <DependentUpon>Orderoutbound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parts\PartIn.resx">
+      <DependentUpon>PartIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parts\Partout.resx">
+      <DependentUpon>Partout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDialog.resx">
+      <DependentUpon>ProductDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\PurchaseInbund.resx">
+      <DependentUpon>PurchaseInbund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return\PurcharseOrder.resx">
+      <DependentUpon>PurcharseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return\SalesOrder.resx">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleSales\SaleInfo.resx">
+      <DependentUpon>SaleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleSales\SaleNoForm.resx">
+      <DependentUpon>SaleNoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STOInbund\STOinbund.resx">
+      <DependentUpon>STOinbund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuiTong\Copper.resx">
+      <DependentUpon>Copper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuiTong\Recovery.resx">
+      <DependentUpon>Recovery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareSales\WaleSalesInfo.resx">
+      <DependentUpon>WaleSalesInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warn.resx">
+      <DependentUpon>Warn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zmtont.resx">
+      <DependentUpon>Zmtont.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\PurchaseInbund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\PurchaseInbund.designer.cs">
+      <DependentUpon>PurchaseInbund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Return\PurcharseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return\PurcharseOrder.designer.cs">
+      <DependentUpon>PurcharseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Return\SalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return\SalesOrder.designer.cs">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleSales\SaleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleSales\SaleInfo.designer.cs">
+      <DependentUpon>SaleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleSales\SaleNoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleSales\SaleNoForm.designer.cs">
+      <DependentUpon>SaleNoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="STOInbund\STOinbund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STOInbund\STOinbund.designer.cs">
+      <DependentUpon>STOinbund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuiTong\Copper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuiTong\Copper.Designer.cs">
+      <DependentUpon>Copper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuiTong\Recovery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuiTong\Recovery.designer.cs">
+      <DependentUpon>Recovery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WareSales\WaleSalesInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareSales\WaleSalesInfo.designer.cs">
+      <DependentUpon>WaleSalesInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warn.Designer.cs">
+      <DependentUpon>Warn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Packaging\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Webservice1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Zmtont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zmtont.Designer.cs">
+      <DependentUpon>Zmtont.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_54457F70FD0E0630E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_54457F70FD0E0630E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_545DD6417F1B08B0E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\Packaging\</RelPath>
+      <UpdateFromURL>http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_545DD6417F1B08B0E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_5452C327E8CB0820E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\Webservice1\</RelPath>
+      <UpdateFromURL>http://sapdev.orgcanmaking.com:8000/sap/bc/srt/wsdl/srvc_5452C327E8CB0820E10080000A420162/wsdl11/allinone/ws_policy/document%3fsap-client=500</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Packaging\document.wsdl" />
+    <None Include="Web References\Packaging\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Packaging\Zsdi501Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi502Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi503Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi504Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi505Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi506Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi507Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi508Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi509Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi510Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi511Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi512Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi513Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi514Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi515Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi516Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi517Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi518Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi519Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi520Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi521Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi522Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi523Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi524Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi525Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi526Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\Zsdi527Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\ZuserCancelResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Packaging\ZuserChackResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\document.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\Zmmi501Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zmmi502Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zmmi503Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zmmi504Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zmmi505Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zmmi506Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zpmi501Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi501Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi502Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi503Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi504Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi505Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi506Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi507Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi508Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi509Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi510Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi511Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi512Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi513Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi514Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi515Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi516Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi517Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi518Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi519Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi520Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi521Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi522Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi523Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi524Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi525Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi526Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\Zsdi527Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WebReference\ZuserChackResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\document.wsdl" />
+    <None Include="Web References\Webservice1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Webservice1\Zppi501Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi502Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi505Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi506Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi507Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi508Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi509Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi510Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi511Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi512Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi513Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi514Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi515Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi516Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi517Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi518Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi519Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi520Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Webservice1\Zppi521Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\3g.xml" />
+    <Content Include="bin\Debug\SmartDeviceProject1.exe" />
+    <Content Include="bin\Debug\SmartDeviceProject1.pdb" />
+    <Content Include="bin\Debug\wifi.xml" />
+    <Content Include="Image\1.gif" />
+    <Content Include="Image\123.jpg" />
+    <Content Include="Image\2.gif" />
+    <Content Include="Image\666666.jpg" />
+    <Content Include="Image\buhuo.jpg" />
+    <Content Include="Image\chaxun.jpg" />
+    <Content Include="Image\chuku.jpg" />
+    <Content Include="Image\login.bmp" />
+    <Content Include="Image\LOGO.jpg" />
+    <Content Include="Image\org.gif" />
+    <Content Include="Image\org.png" />
+    <Content Include="Image\pandian.jpg" />
+    <Content Include="Image\QQ截图20140905171935.png" />
+    <Content Include="Image\QQ截图20140905171955.png" />
+    <Content Include="Image\ruku.jpg" />
+    <Content Include="Image\scan.jpg" />
+    <Content Include="Image\shangjia.jpg" />
+    <Content Include="Image\shenhe.jpg" />
+    <Content Include="Image\tuichang.jpg" />
+    <Content Include="Image\tuichu.jpg" />
+    <Content Include="Image\yiku.jpg" />
+    <Content Include="Image\yiku1.jpg" />
+    <Content Include="Image\yiku2.jpg" />
+    <Content Include="Image\图片1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

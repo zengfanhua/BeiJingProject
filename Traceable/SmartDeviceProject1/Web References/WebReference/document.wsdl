@@ -1,0 +1,2456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_BN_binding">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN_BN_binding_SOAP12">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" />
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_zmmi_webservice">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+      <sapcentraladmin:BusinessApplicationID>54230E1DD4252810E10080000A420162</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi501">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi502">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi503">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi516">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi504">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi505">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zmmi506">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi515">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zpmi501">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi501">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi502">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi514">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi503">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi504">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi505">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi506">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi513">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi507">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi508">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi509">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi512">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi510">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi511">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi517">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi518">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi519">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi520">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi521">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi522">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi523">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi524">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi525">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi526">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_Zsdi527">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_ZuserChack">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char100">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char120">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="120" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char132">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="132" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char200">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="200" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="clnt3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date">
+        <xsd:restriction base="xsd:date">
+          <xsd:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal10.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="10" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal5.0">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="5" />
+          <xsd:fractionDigits value="0" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal6.0">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="6" />
+          <xsd:fractionDigits value="0" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:complexType name="Zsdmsg01">
+        <xsd:sequence>
+          <xsd:element name="Ztype" type="n0:char1" />
+          <xsd:element name="Message" type="n0:char255" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zrohgrbapi">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Bukrs" type="n0:char4" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Ekorg" type="n0:char4" />
+          <xsd:element name="Ebeln" type="n0:char10" />
+          <xsd:element name="Ebelp" type="n0:numeric5" />
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Zvlot" type="n0:char15" />
+          <xsd:element name="Zpnum" type="n0:numeric4" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Zmeng2" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng" type="n0:decimal10.3" />
+          <xsd:element name="Zpdte" type="n0:char8" />
+          <xsd:element name="Zbanm" type="n0:char100" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zvnam" type="n0:char120" />
+          <xsd:element name="Zmein" type="n0:quantum13.3" />
+          <xsd:element name="Zmatn" type="n0:char18" />
+          <xsd:element name="Ztdxl" type="n0:char20" />
+          <xsd:element name="Ztydz" type="n0:char20" />
+          <xsd:element name="Zltcj" type="n0:char20" />
+          <xsd:element name="Zmeng1" type="n0:char15" />
+          <xsd:element name="Zmeni" type="n0:char3" />
+          <xsd:element name="Ztres" type="n0:char20" />
+          <xsd:element name="Zwlot" type="n0:char20" />
+          <xsd:element name="Zmenge" type="n0:quantum13.3" />
+          <xsd:element name="Zmeins" type="n0:char3" />
+          <xsd:element name="Zresa" type="n0:char20" />
+          <xsd:element name="Zresb" type="n0:char20" />
+          <xsd:element name="Zothr" type="n0:char40" />
+          <xsd:element name="Zisco" type="n0:char2" />
+          <xsd:element name="Bstme" type="n0:unit3" />
+          <xsd:element name="Zseno" type="n0:numeric4" />
+          <xsd:element name="Zdele" type="n0:char1" />
+          <xsd:element name="Zisgr" type="n0:char2" />
+          <xsd:element name="Zispr" type="n0:char1" />
+          <xsd:element name="Zpdat" type="n0:date" />
+          <xsd:element name="Zgrop" type="n0:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi504">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Zlgort" type="n0:char4" />
+          <xsd:element name="Menge" type="n0:decimal6.0" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zrohgiinfo">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Aufnr" type="n0:char12" />
+          <xsd:element name="Kostl" type="n0:char10" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zpnum" type="n0:numeric4" />
+          <xsd:element name="Lgort" type="n0:char4" />
+          <xsd:element name="Bwart" type="n0:char3" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+          <xsd:element name="Datum" type="n0:char8" />
+          <xsd:element name="Zgrop" type="n0:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi502">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Vstel" type="n0:char4" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Zfsla" type="n0:char4" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zpnum" type="n0:char4" />
+          <xsd:element name="Zdate" type="n0:char8" />
+          <xsd:element name="Zdatum" type="n0:char8" />
+          <xsd:element name="Edatu" type="n0:char8" />
+          <xsd:element name="Zbanm" type="n0:char100" />
+          <xsd:element name="Zmeng" type="n0:decimal5.0" />
+          <xsd:element name="Zfslb" type="n0:char4" />
+          <xsd:element name="Zmein" type="n0:unit3" />
+          <xsd:element name="Zline" type="n0:char200" />
+          <xsd:element name="Maktx" type="n0:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi503">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Lgort" type="n0:char4" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zpnum" type="n0:numeric4" />
+          <xsd:element name="Zmenge" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng1" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng2" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng3" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng4" type="n0:decimal10.3" />
+          <xsd:element name="Znumb" type="n0:numeric3" />
+          <xsd:element name="Zbanm" type="n0:char100" />
+          <xsd:element name="Vgbel" type="n0:char10" />
+          <xsd:element name="Vgpos" type="n0:numeric6" />
+          <xsd:element name="Ernam" type="n0:char12" />
+          <xsd:element name="Zline" type="n0:char200" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi508">
+        <xsd:sequence>
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Zban1" type="n0:char100" />
+          <xsd:element name="Vgbel" type="n0:char10" />
+          <xsd:element name="Vgpos" type="n0:numeric6" />
+          <xsd:element name="Zban2" type="n0:char100" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi518">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Vbeln" type="n0:char10" />
+          <xsd:element name="Posnr" type="n0:numeric6" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Lgort" type="n0:char4" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zpnum" type="n0:numeric4" />
+          <xsd:element name="Zmenge" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng1" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng2" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng3" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng4" type="n0:decimal10.3" />
+          <xsd:element name="Znumb" type="n0:numeric3" />
+          <xsd:element name="Zbanm" type="n0:numeric10" />
+          <xsd:element name="Vgbel" type="n0:char10" />
+          <xsd:element name="Vgpos" type="n0:numeric6" />
+          <xsd:element name="Ernam" type="n0:char12" />
+          <xsd:element name="Zline" type="n0:char200" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Zsdi521I">
+        <xsd:sequence>
+          <xsd:element name="Mandt" type="n0:clnt3" />
+          <xsd:element name="Znumb" type="n0:char10" />
+          <xsd:element name="Matnr" type="n0:char18" />
+          <xsd:element name="Maktx" type="n0:char40" />
+          <xsd:element name="Werks" type="n0:char4" />
+          <xsd:element name="Lgort" type="n0:char4" />
+          <xsd:element name="Charg" type="n0:char10" />
+          <xsd:element name="Zpnum" type="n0:numeric4" />
+          <xsd:element name="Zbanm" type="n0:char100" />
+          <xsd:element name="Zmeng1" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng2" type="n0:decimal10.3" />
+          <xsd:element name="Zmeng4" type="n0:decimal10.3" />
+          <xsd:element name="Zline" type="n0:char200" />
+          <xsd:element name="Datum" type="n0:char8" />
+          <xsd:element name="Ernam" type="n0:char12" />
+          <xsd:element name="Meins" type="n0:unit3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZuserCheck">
+        <xsd:sequence>
+          <xsd:element name="Zusrd" type="n0:char10" />
+          <xsd:element name="Zbame" type="n0:char4" />
+          <xsd:element name="Zfunc" type="n0:char30" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdmsg01">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdmsg01" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdi504">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdi504" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZrohgrbapi">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zrohgrbapi" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZrohgiinfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zrohgiinfo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdi503">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdi503" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdi508">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdi508" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdi518">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdi518" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZsdi521I">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsdi521I" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZuserCheck">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZuserCheck" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Zmmi501">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element name="Ekorg" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Werks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi501Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Mtype" type="n0:char1" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi502">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Zbarcode" type="tns:Zrohgrbapi" />
+            <xsd:element name="Zgrop" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi502Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi503">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Lgort" type="n0:char4" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi503Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi504">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZrohgrbapi" />
+            <xsd:element minOccurs="0" name="Itac" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Zgrop" type="n0:char4" />
+            <xsd:element name="Zmove" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi504Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZrohgrbapi" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi505">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Aufnr" type="n0:char12" />
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Kostl" type="n0:char10" />
+            <xsd:element name="Lgort" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Werks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi505Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Zaufnr" type="n0:char12" />
+            <xsd:element name="Zdatum" type="n0:char8" />
+            <xsd:element name="Zkostl" type="n0:char10" />
+            <xsd:element name="Zlgort" type="n0:char4" />
+            <xsd:element name="Zwerks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi506">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Aufnr" type="n0:char12" />
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZrohgiinfo" />
+            <xsd:element name="Kostl" type="n0:char10" />
+            <xsd:element name="Lgort" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Werks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zmmi506Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZrohgiinfo" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zpmi501">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Matnr" type="n0:char18" />
+            <xsd:element name="Meins" type="n0:unit3" />
+            <xsd:element name="Werks" type="n0:char4" />
+            <xsd:element name="Ztext" type="n0:char4" />
+            <xsd:element name="Zusrd" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zpmi501Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi501">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vkorg" type="n0:char4" />
+            <xsd:element name="Vstel" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi501Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LDate" type="n0:char8" />
+            <xsd:element name="LEdatu" type="n0:char8" />
+            <xsd:element name="LVbeln" type="n0:char10" />
+            <xsd:element name="LVstel" type="n0:char4" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi502">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Vbeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Zbarcode" type="tns:Zsdi502" />
+            <xsd:element minOccurs="0" name="Zcheck" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi502Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi503">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Zbarcode" type="tns:Zsdi503" />
+            <xsd:element minOccurs="0" name="Ztest" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi503Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi504">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi503" />
+            <xsd:element minOccurs="0" name="Lgort" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Vbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi504Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi503" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi505">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zmove" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Zsave" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztext1" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext2" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext3" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext4" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext5" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext6" type="n0:char255" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi505Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi506">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Vbeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Z1" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Z2" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Z3" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi506Response">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi507">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vkorg" type="n0:char4" />
+            <xsd:element name="Vstel" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi507Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LDate" type="n0:char8" />
+            <xsd:element name="LEdatu" type="n0:char8" />
+            <xsd:element name="LVbeln" type="n0:char10" />
+            <xsd:element name="LVstel" type="n0:char4" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi508">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Vbeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Zbarcode" type="tns:Zsdi503" />
+            <xsd:element minOccurs="0" name="Ztest" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi508Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+            <xsd:element name="Zmtont" type="tns:Zsdi508" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi509">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element minOccurs="0" name="Itac" type="tns:TableOfZsdi503" />
+            <xsd:element name="Lgort" type="n0:char4" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi509Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi503" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi510">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element minOccurs="0" name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zmove" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Zsave" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztext1" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext2" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext3" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext4" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext5" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext6" type="n0:char255" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi510Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi511">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element name="Ekorg" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Werks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi511Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Zdata" type="n0:char8" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi512">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Ebeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Werks" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zbarcode" type="tns:Zsdi502" />
+            <xsd:element minOccurs="0" name="Zcheck" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi512Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi513">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="Ebeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Werks" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zbarcode" type="tns:Zsdi503" />
+            <xsd:element minOccurs="0" name="Zmtont" type="tns:TableOfZsdi508" />
+            <xsd:element minOccurs="0" name="Ztest" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi513Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+            <xsd:element name="Zmtont" type="tns:TableOfZsdi508" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi514">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element minOccurs="0" name="Lgort" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi514Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi515">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element minOccurs="0" name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zmove" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Zsave" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztext1" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext2" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext3" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext4" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext5" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext6" type="n0:char255" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi515Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi516">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vkorg" type="n0:char4" />
+            <xsd:element name="Vstel" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi516Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LEdatu" type="n0:char8" />
+            <xsd:element name="LVbeln" type="n0:char10" />
+            <xsd:element name="LVstel" type="n0:char4" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi517">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Zbarcode" type="tns:Zsdi502" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi517Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi518">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Zbarcode" type="tns:Zsdi518" />
+            <xsd:element minOccurs="0" name="Ztest" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi518Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi519">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element minOccurs="0" name="Itac" type="tns:TableOfZsdi503" />
+            <xsd:element name="Lgort" type="n0:char4" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi519Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi503" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi520">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi518" />
+            <xsd:element minOccurs="0" name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vbeln" type="n0:char10" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zmove" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Zsave" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztext1" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext2" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext3" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext4" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext5" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext6" type="n0:char255" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi520Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi518" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi521">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="LItab" type="tns:TableOfZsdi521I" />
+            <xsd:element name="Name1" type="n0:char30" />
+            <xsd:element name="Street" type="n0:char60" />
+            <xsd:element name="TelNumber" type="n0:char30" />
+            <xsd:element name="Vkorg" type="n0:char4" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element name="Werks" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Z1" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Z2" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Z3" type="n0:char1" />
+            <xsd:element name="Zbame" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zicad" type="n0:char20" />
+            <xsd:element name="Zname1" type="n0:char30" />
+            <xsd:element minOccurs="0" name="Zname2" type="n0:char30" />
+            <xsd:element name="Znumb" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Znume" type="n0:char20" />
+            <xsd:element minOccurs="0" name="Zprint" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztelph" type="n0:char30" />
+            <xsd:element minOccurs="0" name="Ztext" type="n0:char255" />
+            <xsd:element name="Ztime" type="n0:char8" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi521Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LItab" type="tns:TableOfZsdi521I" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi522">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Edatu" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Return" type="tns:TableOfZsdmsg01" />
+            <xsd:element name="Werks" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi522Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LData" type="n0:char8" />
+            <xsd:element name="LEbeln" type="n0:char10" />
+            <xsd:element name="LEdatu" type="n0:char8" />
+            <xsd:element name="LVstel" type="n0:char4" />
+            <xsd:element name="Return" type="tns:TableOfZsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi523">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Zbarcode" type="tns:Zsdi502" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi523Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi524">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element name="Zbarcode" type="tns:Zsdi518" />
+            <xsd:element minOccurs="0" name="Ztest" type="n0:char1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi524Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi525">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi504" />
+            <xsd:element name="Lgort" type="n0:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi525Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi504" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi526">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Datum" type="n0:char8" />
+            <xsd:element name="Ebeln" type="n0:char10" />
+            <xsd:element name="Ernam" type="n0:char12" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi518" />
+            <xsd:element minOccurs="0" name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Vstel" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Zmove" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Zsave" type="n0:char1" />
+            <xsd:element minOccurs="0" name="Ztext1" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext2" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext3" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext4" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext5" type="n0:char132" />
+            <xsd:element minOccurs="0" name="Ztext6" type="n0:char255" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi526Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi518" />
+            <xsd:element name="LZsdi504" type="tns:TableOfZsdi504" />
+            <xsd:element name="Return" type="tns:Zsdmsg01" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi527">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Ernam" type="n0:char4" />
+            <xsd:element minOccurs="0" name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element minOccurs="0" name="Itac" type="tns:TableOfZsdi518" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Zsdi527Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Itab" type="tns:TableOfZsdi503" />
+            <xsd:element name="Itac" type="tns:TableOfZsdi518" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZuserChack">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Werks" type="n0:char4" />
+            <xsd:element name="Zpasw" type="n0:char8" />
+            <xsd:element minOccurs="0" name="Zuser" type="tns:TableOfZuserCheck" />
+            <xsd:element name="Zusrd" type="n0:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZuserChackResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Zuser" type="tns:TableOfZuserCheck" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Zmmi501">
+    <wsdl:part name="parameters" element="tns:Zmmi501" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi501Response">
+    <wsdl:part name="parameter" element="tns:Zmmi501Response" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi502">
+    <wsdl:part name="parameters" element="tns:Zmmi502" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi502Response">
+    <wsdl:part name="parameter" element="tns:Zmmi502Response" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi503">
+    <wsdl:part name="parameters" element="tns:Zmmi503" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi503Response">
+    <wsdl:part name="parameter" element="tns:Zmmi503Response" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi504">
+    <wsdl:part name="parameters" element="tns:Zmmi504" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi504Response">
+    <wsdl:part name="parameter" element="tns:Zmmi504Response" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi505">
+    <wsdl:part name="parameters" element="tns:Zmmi505" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi505Response">
+    <wsdl:part name="parameter" element="tns:Zmmi505Response" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi506">
+    <wsdl:part name="parameters" element="tns:Zmmi506" />
+  </wsdl:message>
+  <wsdl:message name="Zmmi506Response">
+    <wsdl:part name="parameter" element="tns:Zmmi506Response" />
+  </wsdl:message>
+  <wsdl:message name="Zpmi501">
+    <wsdl:part name="parameters" element="tns:Zpmi501" />
+  </wsdl:message>
+  <wsdl:message name="Zpmi501Response">
+    <wsdl:part name="parameter" element="tns:Zpmi501Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi501">
+    <wsdl:part name="parameters" element="tns:Zsdi501" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi501Response">
+    <wsdl:part name="parameter" element="tns:Zsdi501Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi502">
+    <wsdl:part name="parameters" element="tns:Zsdi502" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi502Response">
+    <wsdl:part name="parameter" element="tns:Zsdi502Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi503">
+    <wsdl:part name="parameters" element="tns:Zsdi503" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi503Response">
+    <wsdl:part name="parameter" element="tns:Zsdi503Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi504">
+    <wsdl:part name="parameters" element="tns:Zsdi504" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi504Response">
+    <wsdl:part name="parameter" element="tns:Zsdi504Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi505">
+    <wsdl:part name="parameters" element="tns:Zsdi505" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi505Response">
+    <wsdl:part name="parameter" element="tns:Zsdi505Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi506">
+    <wsdl:part name="parameters" element="tns:Zsdi506" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi506Response">
+    <wsdl:part name="parameter" element="tns:Zsdi506Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi507">
+    <wsdl:part name="parameters" element="tns:Zsdi507" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi507Response">
+    <wsdl:part name="parameter" element="tns:Zsdi507Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi508">
+    <wsdl:part name="parameters" element="tns:Zsdi508" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi508Response">
+    <wsdl:part name="parameter" element="tns:Zsdi508Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi509">
+    <wsdl:part name="parameters" element="tns:Zsdi509" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi509Response">
+    <wsdl:part name="parameter" element="tns:Zsdi509Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi510">
+    <wsdl:part name="parameters" element="tns:Zsdi510" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi510Response">
+    <wsdl:part name="parameter" element="tns:Zsdi510Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi511">
+    <wsdl:part name="parameters" element="tns:Zsdi511" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi511Response">
+    <wsdl:part name="parameter" element="tns:Zsdi511Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi512">
+    <wsdl:part name="parameters" element="tns:Zsdi512" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi512Response">
+    <wsdl:part name="parameter" element="tns:Zsdi512Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi513">
+    <wsdl:part name="parameters" element="tns:Zsdi513" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi513Response">
+    <wsdl:part name="parameter" element="tns:Zsdi513Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi514">
+    <wsdl:part name="parameters" element="tns:Zsdi514" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi514Response">
+    <wsdl:part name="parameter" element="tns:Zsdi514Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi515">
+    <wsdl:part name="parameters" element="tns:Zsdi515" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi515Response">
+    <wsdl:part name="parameter" element="tns:Zsdi515Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi516">
+    <wsdl:part name="parameters" element="tns:Zsdi516" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi516Response">
+    <wsdl:part name="parameter" element="tns:Zsdi516Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi517">
+    <wsdl:part name="parameters" element="tns:Zsdi517" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi517Response">
+    <wsdl:part name="parameter" element="tns:Zsdi517Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi518">
+    <wsdl:part name="parameters" element="tns:Zsdi518" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi518Response">
+    <wsdl:part name="parameter" element="tns:Zsdi518Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi519">
+    <wsdl:part name="parameters" element="tns:Zsdi519" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi519Response">
+    <wsdl:part name="parameter" element="tns:Zsdi519Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi520">
+    <wsdl:part name="parameters" element="tns:Zsdi520" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi520Response">
+    <wsdl:part name="parameter" element="tns:Zsdi520Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi521">
+    <wsdl:part name="parameters" element="tns:Zsdi521" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi521Response">
+    <wsdl:part name="parameter" element="tns:Zsdi521Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi522">
+    <wsdl:part name="parameters" element="tns:Zsdi522" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi522Response">
+    <wsdl:part name="parameter" element="tns:Zsdi522Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi523">
+    <wsdl:part name="parameters" element="tns:Zsdi523" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi523Response">
+    <wsdl:part name="parameter" element="tns:Zsdi523Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi524">
+    <wsdl:part name="parameters" element="tns:Zsdi524" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi524Response">
+    <wsdl:part name="parameter" element="tns:Zsdi524Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi525">
+    <wsdl:part name="parameters" element="tns:Zsdi525" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi525Response">
+    <wsdl:part name="parameter" element="tns:Zsdi525Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi526">
+    <wsdl:part name="parameters" element="tns:Zsdi526" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi526Response">
+    <wsdl:part name="parameter" element="tns:Zsdi526Response" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi527">
+    <wsdl:part name="parameters" element="tns:Zsdi527" />
+  </wsdl:message>
+  <wsdl:message name="Zsdi527Response">
+    <wsdl:part name="parameter" element="tns:Zsdi527Response" />
+  </wsdl:message>
+  <wsdl:message name="ZuserChack">
+    <wsdl:part name="parameters" element="tns:ZuserChack" />
+  </wsdl:message>
+  <wsdl:message name="ZuserChackResponse">
+    <wsdl:part name="parameter" element="tns:ZuserChackResponse" />
+  </wsdl:message>
+  <wsdl:portType name="zmmi_webservice">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://sapdev.orgcanmaking.com:8000/sap/bc/esdt/docu/sd_text?sap-client=500&amp;sd_name=ZMMI_WEBSERVICE" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_zmmi_webservice" />
+    </wsp:Policy>
+    <wsdl:operation name="Zmmi501">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi501" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi501" />
+      <wsdl:output message="tns:Zmmi501Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi502">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi502" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi502" />
+      <wsdl:output message="tns:Zmmi502Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi503">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi503" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi503" />
+      <wsdl:output message="tns:Zmmi503Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi504">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi504" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi504" />
+      <wsdl:output message="tns:Zmmi504Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi505">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi505" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi505" />
+      <wsdl:output message="tns:Zmmi505Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi506">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zmmi506" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zmmi506" />
+      <wsdl:output message="tns:Zmmi506Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zpmi501">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zpmi501" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zpmi501" />
+      <wsdl:output message="tns:Zpmi501Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi501">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi501" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi501" />
+      <wsdl:output message="tns:Zsdi501Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi502">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi502" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi502" />
+      <wsdl:output message="tns:Zsdi502Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi503">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi503" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi503" />
+      <wsdl:output message="tns:Zsdi503Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi504">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi504" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi504" />
+      <wsdl:output message="tns:Zsdi504Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi505">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi505" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi505" />
+      <wsdl:output message="tns:Zsdi505Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi506">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi506" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi506" />
+      <wsdl:output message="tns:Zsdi506Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi507">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi507" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi507" />
+      <wsdl:output message="tns:Zsdi507Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi508">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi508" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi508" />
+      <wsdl:output message="tns:Zsdi508Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi509">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi509" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi509" />
+      <wsdl:output message="tns:Zsdi509Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi510">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi510" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi510" />
+      <wsdl:output message="tns:Zsdi510Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi511">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi511" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi511" />
+      <wsdl:output message="tns:Zsdi511Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi512">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi512" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi512" />
+      <wsdl:output message="tns:Zsdi512Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi513">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi513" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi513" />
+      <wsdl:output message="tns:Zsdi513Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi514">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi514" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi514" />
+      <wsdl:output message="tns:Zsdi514Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi515">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi515" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi515" />
+      <wsdl:output message="tns:Zsdi515Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi516">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi516" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi516" />
+      <wsdl:output message="tns:Zsdi516Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi517">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi517" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi517" />
+      <wsdl:output message="tns:Zsdi517Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi518">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi518" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi518" />
+      <wsdl:output message="tns:Zsdi518Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi519">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi519" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi519" />
+      <wsdl:output message="tns:Zsdi519Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi520">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi520" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi520" />
+      <wsdl:output message="tns:Zsdi520Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi521">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi521" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi521" />
+      <wsdl:output message="tns:Zsdi521Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi522">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi522" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi522" />
+      <wsdl:output message="tns:Zsdi522Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi523">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi523" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi523" />
+      <wsdl:output message="tns:Zsdi523Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi524">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi524" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi524" />
+      <wsdl:output message="tns:Zsdi524Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi525">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi525" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi525" />
+      <wsdl:output message="tns:Zsdi525Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi526">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi526" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi526" />
+      <wsdl:output message="tns:Zsdi526Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi527">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_Zsdi527" />
+      </wsp:Policy>
+      <wsdl:input message="tns:Zsdi527" />
+      <wsdl:output message="tns:Zsdi527Response" />
+    </wsdl:operation>
+    <wsdl:operation name="ZuserChack">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_ZuserChack" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZuserChack" />
+      <wsdl:output message="tns:ZuserChackResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="binding" type="tns:zmmi_webservice">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_binding" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Zmmi501">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi502">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi503">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi504">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi505">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi506">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zpmi501">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi501">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi502">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi503">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi504">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi505">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi506">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi507">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi508">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi509">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi510">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi511">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi512">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi513">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi514">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi515">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi516">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi517">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi518">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi519">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi520">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi521">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi522">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi523">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi524">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi525">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi526">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi527">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZuserChack">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="binding_SOAP12" type="tns:zmmi_webservice">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_binding_SOAP12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Zmmi501">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi502">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi503">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi504">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi505">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zmmi506">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zpmi501">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi501">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi502">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi503">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi504">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi505">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi506">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi507">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi508">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi509">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi510">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi511">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi512">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi513">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi514">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi515">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi516">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi517">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi518">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi519">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi520">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi521">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi522">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi523">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi524">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi525">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi526">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Zsdi527">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZuserChack">
+      <wsoap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZMMI_WEBSERVICE">
+    <wsdl:port name="binding" binding="tns:binding">
+      <soap:address location="http://sapdev.orgcanmaking.com:8000/sap/bc/srt/rfc/sap/zmmi_webservice/500/zmmi_webservice/binding" />
+    </wsdl:port>
+    <wsdl:port name="binding_SOAP12" binding="tns:binding_SOAP12">
+      <wsoap12:address location="http://sapdev.orgcanmaking.com:8000/sap/bc/srt/rfc/sap/zmmi_webservice/500/zmmi_webservice/binding" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
