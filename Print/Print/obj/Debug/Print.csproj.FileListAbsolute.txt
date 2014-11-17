@@ -6,3 +6,11 @@ C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print
 C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.exe
 C:\Users\Admin\Documents\Visual Studio 2008\Projects\Print\Print\obj\Debug\Print.pdb
+D:\GitGroup\BeiJingProject\Print\Print\bin\Debug\Print.exe
+D:\GitGroup\BeiJingProject\Print\Print\bin\Debug\Print.pdb
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\ResolveAssemblyReference.cache
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\Print.Form1.resources
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\Print.Properties.Resources.resources
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\Print.csproj.GenerateResource.Cache
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\Print.exe
+D:\GitGroup\BeiJingProject\Print\Print\obj\Debug\Print.pdb

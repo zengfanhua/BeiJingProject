@@ -19,7 +19,7 @@ namespace Print
         List<PrintInfo> list = new List<PrintInfo>();
 
         /// <summary>
-        /// 页面加载
+        /// 页面加载test
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
